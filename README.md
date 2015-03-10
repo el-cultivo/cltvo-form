@@ -1,13 +1,14 @@
 # cltvo-form
-## Validar un form 
+## Validar un form medio de *jQuery Validation Plugin*
 
-Here's an idea: why don't we take `SuperiorProject` and turn it into `**Reasonable**Project`.
+### jQuery Validation Plugin
 
+### Creación del formulario
 
-Check out this neat program I wrote:
+### Envío del formulario 
 
-```
-x = 0
-x = 2 + 2
-what is x
-```
+### Definición de las reglas de validación 
+
+### Estilo de los mensajes
+
+## Conexión con mailchimp.com
