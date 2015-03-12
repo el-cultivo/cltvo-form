@@ -1,5 +1,26 @@
+/**
+ * Es necesario para que la validación del form funcione correctamente las siguientes lineas deben de colocarse siempre dentro de $(document).ready(function(){}
+ *  
+ * Parámetros:
+ *
+ *  @param string ajax_mail_url ruta donde se encuentra el archivo 'ajax-mail.php'
+ *
+ *  Para cada form dentro de la pagina se requieren los siguientes parámetros: 
+ *      @param string id_form identificador del form al que se haga la referencia
+ *      @param string id_input identificador de los inputs asociados al form que requieran reglas de validación especificas
+ *      @param string id_submit identificador del submit asociado al form
+ *      En caso de que el formulario contenga input condicionados es necesario escribir las reglas de funcionamiento de los mismos para lo cual vas a requerir los siguientes parámetros:
+ *          @param string id_input_trigger identificador de lo input asociados al form del cual dependan los input condicionados 
+ *          @param string id_input_child identificador de los input dependientes (Como regla general se recomienda que estos input sean deshabilitados cuando no son requeridos, esto evita que se envíen junto con el form  )
+ *
+ *En caso de ser necesario se pueden generar reglas de validación generales o personalización de los mensajes de validación:
+*/
+
+
 (function($) {
 	$(document).ready(function(){
+		
+
 		
 		
 		// Se define la ruta del post mail vía ajax
