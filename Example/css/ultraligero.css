@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/**
+ * De manera opcional para que la validaci¾n del form puedes personalizar el estilo con el que se muestran los errores
+ *  
+ * Para cada form dentro de la pagina se requieren los siguientes parßmetros: 
+ *  @param string id_form identificador del form al que se haga la referencia 
+*/
+/*---------------------estilos de la validaci¾n------------------------------------*/
+#suscribe label.error {
+  margin: 0px;
+  font-style: italic;
+  color: #d54742;
+  font-size: 12px; }
+
+#contacto label.error {
+  color: #ff0000;
+  font-size: 20px; }
+
+/*# sourceMappingURL=ultraligero.css.map */

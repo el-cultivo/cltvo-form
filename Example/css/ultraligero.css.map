@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;;;;;AAWC,qBAAW;EACV,MAAM,EAAE,GAAG;EACX,UAAU,EAAE,MAAM;EAClB,KAAK,EAAC,OAAO;EACb,SAAS,EAAC,IAAI;;AAIf,qBAAW;EACV,KAAK,EAAC,OAAO;EACb,SAAS,EAAC,IAAI",
+"sources": ["../sass/ultraligero.scss"],
+"names": [],
+"file": "ultraligero.css"
+}
