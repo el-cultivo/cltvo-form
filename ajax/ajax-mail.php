@@ -102,14 +102,14 @@ function cltvo_manda_mail($de_quien, $de_quien_mail, $qui_hubo, $mailchip_merge_
 
 
     if ($primer_mail && $segundo_mail) {
-        if mailchip == true) { // solo en caso de que quieran registrarse en mailchimp
+        if (mailchip == true) { // solo en caso de que quieran registrarse en mailchimp
 
             $mergevars_val = array(); // inicia si campos extra en para mailchimp
             if (mailchip_mergevar_on == true) { // solo en caso de que quieran registrarse campos extra en mailchimp
                 $mailchimp_mergevars = merge_vars_gen($_POST[id_form]); // función para definir el valor de los campos extra
 
                 foreach ($mailchip_merge_array as $key => $value) { // asigna el valor correspondiente a campo extra
-                    if (isset($mailchimp_mergevars[$value]) {
+                    if (isset($mailchimp_mergevars[$value])) {
                         $mergevars_val[$key] = $mailchimp_mergevars[$value];
                     } else {
                         $mergevars_val[$key] = ""; // en caso de que el input no llegara lo marca como vació
