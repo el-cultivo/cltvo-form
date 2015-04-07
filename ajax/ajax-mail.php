@@ -2,6 +2,15 @@
 
 include_once 'ajax-mail_config.php';
 
+//--------------------------verificación simple del captcha  ----------------------------------------
+
+if (isset($_POST['g-recaptcha-response'])){
+    if(empty($_POST['g-recaptcha-response'])){
+        echo "El captcha es necesario";
+        exit;
+    }   
+}
+
 //----------------------------envió de los correos --------------------------------
 
 
@@ -13,6 +22,7 @@ if (isset($_POST[id_form]) && !isset($break_form)) { // en esta función se env�
     echo cltvo_manda_mail(reg_name, reg_mail, $datos, $mailchip_merge_array); // requiere conocer los input de nombre y mail
 } else { // o regresa un error en caso de que exista un problema con los form
     echo "Error en envío";
+    exit;
 }
 
 //----------------------------funciones para el envió del correo --------------------------------
