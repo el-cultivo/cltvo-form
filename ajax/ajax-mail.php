@@ -94,7 +94,7 @@ function Post_array_to_mail_html_cont($variable, $first_line){ // genera el text
 
 function cltvo_manda_mail($de_quien, $de_quien_mail, $qui_hubo, $mailchip_merge_array){ // envía correo de registro y notificación
     $pa_donde = mail;
-    $qui_hubo_asunto = "Nuevo registro: " . $de_quien_mail;
+    $qui_hubo_asunto = primera_linea.": " . $de_quien_mail;
 
     if (!empty($de_quien)) {
         $qui_hubo_asunto .= " (" . $de_quien . ") ";
@@ -112,7 +112,7 @@ function cltvo_manda_mail($de_quien, $de_quien_mail, $qui_hubo, $mailchip_merge_
     $primer_mail = mail($pa_donde, $qui_hubo_asunto, $qui_hubo_msj, $from . $cabeza);
 
     /*---------------------------------envió del mail de agradecimiento ----------------------------------------------------------*/
-    $asunto = "Registro";
+    $asunto = primera_linea;
     $mensaje = "Gracias por tu mensaje. Nos comunicaremos contigo pronto.";
     $cabeza .= "FROM: <" . $pa_donde . ">\r\n";
 
