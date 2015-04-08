@@ -4,8 +4,19 @@ include_once 'ajax-mail_config.php';
 
 //--------------------------verificación simple del captcha  ----------------------------------------
 
-if (isset($_POST['g-recaptcha-response'])){
-    if(empty($_POST['g-recaptcha-response'])){
+/**
+ * Se verifica que el formulario contenga recaptcha por medio de la clave "g-recaptcha-response" que se envía como parte del formulario por el método POST .
+ * 
+ * Parámetros:
+ * @param array $_POST arreglo superglobal asociativo de variables enviadas por el método POST 
+ * @key string g-recaptcha-response cuando se utiliza el recaptcha en un formulario siempre se envía este parámetro, si el recaptcha no se a contestado o no es correcto este paramento se envía con  el valor es vació, si el recaptcha es contestado correctamente el valor enviado de este paramento es una cadena que puede ser verificada por medio de la de la clave personal que te asigna cuando se da de alta sitio en el recaptcha. 
+ * 
+ * Para uso del recaptcha en este form solo se utiliza una verificación simple que consiste en revisar que el valor de $_POST['g-recaptcha-response'] no se encuetre vacio.
+ *
+*/
+
+if (isset($_POST['g-recaptcha-response'])){ // si el formulario cuenta con recaptcha en caso contrario ignora estas lineas 
+    if(empty($_POST['g-recaptcha-response'])){ // se checa que el recaptcha no se encuentre vació 
         echo "El captcha es necesario";
         exit;
     }   

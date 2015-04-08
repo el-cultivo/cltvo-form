@@ -25,6 +25,22 @@
     * Los tipos de input de html5 como url, number, email, etc. son interpretados por el Plugin como reglas de validación, por lo que no es necesario que se les asignen nuevamente en las reglas especificas. 
     * Es importante que todos los input dependientes se marque con el atributo *disabled* para que no sean enviados con el submit a menos que esto sea requerido.
 
+### Uso del reCAPTCHA *html*
+* Para integrar el reCAPTCHA en un form, antes que nada es necesario contar con una cuenta de google.
+* Ingresar a la pagina [Google RECAPTCHA](https://www.google.com/recaptcha/intro/index.html) y dar click sobre el boton **Get reCAPTCHA**
+* Seguir los pasos indicados para *Registrar un nuevo sitio* 
+* Agregar las siguientes claves lineas al código.
+  * En el Header
+  ```HTML 
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+  ```
+  * En el form 
+  ```HTML 
+	<div class="g-recaptcha" data-sitekey="Clave del sitio"></div>
+  ``` 
+	* La **Clave del sitio** debe ser sustituida por la que te asigna google cuando *Registras el sitio* 
+* **Nota** No es necesario configurar ningún paramento adicional para uso del reCAPTCHA, ya que dentro del archivo *ajax-mail.php* ya se cuenta con una validación simple del mismo.
+
 ### Envío del formulario *javascript*
 * Para que la validación del form funcione correctamente las siguientes lineas deben de colocarse siempre dentro de `$(document).ready(function(){}`. 
   
