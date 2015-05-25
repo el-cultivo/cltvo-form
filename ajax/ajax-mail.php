@@ -109,14 +109,15 @@ function cltvo_manda_mail($de_quien, $de_quien_mail, $qui_hubo, $mailchip_merge_
     $cabeza = "MIME-Version: 1.0\r\n";
     $cabeza .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    $primer_mail = mail($pa_donde, $qui_hubo_asunto, $qui_hubo_msj, $from . $cabeza);
+    $primer_mail = mail($pa_donde, $qui_hubo_asunto, $qui_hubo_msj,  $cabeza.$from, "-f".$de_quien_mail  );
 
     /*---------------------------------envió del mail de agradecimiento ----------------------------------------------------------*/
     $asunto = primera_linea;
     $mensaje = "Gracias por tu mensaje. Nos comunicaremos contigo pronto.";
-    $cabeza .= "FROM: <" . $pa_donde . ">\r\n";
+    $from2 = 'FROM: ' .$pa_donde. "\r\n";
+    $segundo_mail = mail($de_quien_mail, $asunto, $mensaje, $cabeza.$from2, "-f".$pa_donde );
 
-    $segundo_mail = mail($de_quien_mail, $asunto, $mensaje, $cabeza);
+    
 
     /*---------------------------------regreso de información vía ajax y activación del mailchimp----------------------------------------------------------*/
 

@@ -33,8 +33,7 @@
 
 
 /*--------------------- datos del correo -------------------------------------*/
-define('mail', 'contacto@contacto.mx'); //  mail de la prestadora de servicios 
-
+define('mail','contacto@contacto.mx'); //  mail de la prestadora de servicios 
 
 /*-------------------- es necesario repetir y modificar las siguientes lineas para cada form que contenga la pagina ------------*/
 $id_form = 'id_form'; // cambiar el identificador del form
@@ -57,14 +56,15 @@ if (isset($_POST[$id_form])) {
         /*-----------------------modificar solo en caso de uso de mailchimp-------------------------*/ 
         
         if (mailchip == true) {
-            define('mailchip_apikey', 'api key'); // cambiar el api key de mailchimp
-            define('mailchip_listid', 'list id'); // cambiar el list id de mailchimp
-            define('mailchip_listurl', 'url'); // cambiar el url de mailchimp
+            define('mailchip_apikey', 'API key'); // cambiar el api key de mailchimp
+            define('mailchip_listid', 'List ID'); // cambiar el list id de mailchimp
+            define('mailchip_listurl', 'URL'); // cambiar el url de mailchimp
             define('mailchip_mergevar_on', false); // cambiar a true en caso de que se cuente con campos extra
             if (mailchip_mergevar_on == true) {//permite tener mas input en el form para seleccionar solo los indispensables para mailchimp o cambiar así como depurar los input no enviados
                 $mailchip_merge_array = array( // cambiar la clave y el valor en función del tag de mailchimp y el nombre del input
-                                            'MERGE1' => id_form . '[input1]', 
-                                            'MERGE2' => id_form . '[input2]');// puedes crecer este array tantas veces sea necesario
+                                            'MERGE1' => id_form . '[input1]',
+                                            'MERGE2' => id_form . '[input2]', 
+                                            'MERGE3' => id_form . '[input3]');// puedes crecer este array tantas veces sea necesario
             }
             define('mailchip_errors_send', false); // cambiar a true en caso de que quieras reporte de errores de mailchimp por mail
             if (mailchip_errors_send == true) {
